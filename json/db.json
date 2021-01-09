@@ -36,5 +36,55 @@
             "password":"admin2"
         }
     
+    ],
+    "categories":[{
+            "id":"1",
+            "name": "Maths",
+            "data": "Dummy Data",
+            "url": "https://img.jagranjosh.com/imported/images/E/Articles/maths2.jpg"
+        },
+        {
+            "id":"2",
+            "name": "GK",
+            "data": "Dummy Data",
+            "url":"https://pat.leverageedu.com/blog/wp-content/uploads/2020/02/General-Knowledge-for-Kids.png"
+        },
+        {
+            "id":"3",
+            "name": "Sports",
+            "data": "Dummy Data",
+            "url": "https://www.psdvault.com/img/2018/06/sports-poster-psdvault-fea.jpg"
+        },
+        {
+            "id":"4",
+            "name": "History",
+            "data": "Dummy Data",
+            "url":"https://lh3.googleusercontent.com/proxy/mZxZaGmJJHqSvTGj4A3p5h1j6SspwXJmyOl6XR3jqJ-I02I7vN0wpHVgkZoLfnyt5DoJXIYs-fByaaHAlSTEFrEI"
+        },
+        {
+            "id":"5",
+            "name": "Javascript",
+            "data": "Dummy Data",
+            "url":"https://ih1.redbubble.net/image.502065300.3896/fposter,small,wall_texture,product,750x1000.u1.jpg"
+        },
+        {
+            "id":"6",
+            "name": "Python",
+            "data": "Dummy Data",
+            "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3V525sCfkI9-5KZ4g0LQ7NHXlpGYLTL4J-g&usqp=CAU"
+        },
+        {
+            "id":"7",
+            "name": "Gaming",
+            "data": "Dummy Data",
+            "url":"https://graphicriver.img.customer.envatousercontent.com/files/258163312/video+games-1980s-80s-classic+gaming-retro+gaming-flyer-video+games-gaming-retro+wave-arcade-synthwave-vaporwave-poster.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=b63932f30360fb4c88f072b826ded823"
+        },
+        {
+            "id":"8",
+            "name": "Space",
+            "data": "Dummy Data",
+            "url":"https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-2060x1288.jpg"
+        }
+    
     ]
 }

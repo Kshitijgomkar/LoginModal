@@ -3,11 +3,11 @@ body{
 }
 .user-tab{
     width: 50%;
-    background-color:#30475e ;
+    background-color : rgb(33, 36, 55) ;
     color: white;
 }
 .admin-tab{
-    background-color:#222831 ;
+    background-color:#181d24 ;
     width: 50%;
 }
 .center {
@@ -17,10 +17,10 @@ body{
   width: 30%;
 }
 .user-panel{
-    background-color: #30475e ;
+    background-color:rgb(36,38,51) ;
 }
 .admin-panel{
-    background-color: #222831 ;
+    background-color: #181d24 ;
 }
 .btn-login-form{
     margin-left: 4%;
