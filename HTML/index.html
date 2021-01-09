@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CDNs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- local scripts  -->
+    <script src="../lib/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="../CSS/modal.css">
+    <script src="../validate.js"></script>
+
+</head>
+<body>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Login
+    </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item user-tab">
+              <a class="nav-link active " id="" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h3>User</h3></a>
+            </li>
+            <li class="nav-item admin-tab">
+              <a class="nav-link" id="admin-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><h3>Admin</h3></a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active user-panel" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="modal-header">
+                    <img src="../images/icons8-user-male.svg" class="center" alt="">
+                    <!-- <h2>USER LOGIN</h2> -->
+                 </div>
+                <div class="modal-body">
+                    <form method="GET" >
+                      <div class="form-group ">
+                        <label for="Email" class="col-sm-2 col-form-label text-light">Email </label>
+                        <div class="col-sm-10">
+                          <input type="text"  class="form-control" id="userEmail" placeholder="email@example.com" autofocus> 
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="inputPassword" class="col-sm-2 col-form-label text-light">Password </label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="userPass" placeholder="Password">
+                        </div>
+                      </div>
+                      
+                    </form>
+                    <div class="form-group row">
+                      <button type="submit" id="but_submit" class="btn btn-login-form">Login</button>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer"> 
+                    <div class=""><a class="forgotPass" role="button" data-toggle="collapse" href="#forgot-password-collapse" aria-expanded="false" aria-controls="forgot-password-collapse">Forgot your password?</a></div>
+                    <div class="collapse" id="forgot-password-collapse">
+                        <form>
+                            <div class="form-group">
+                              <!-- <label for="forgot-password-email">Email address</label> -->
+                              <input type="email" id="emailForgotPass" class="form-control" id="forgot-password-email" placeholder="Email">
+                            </div>
+                         
+                        </form>
+                        <button type="submit" id="forgot_pass" class="btn btn-warning">Send  password</button>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="tab-pane fade admin-panel" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                 <div class="modal-header admin-img">
+                      <img src="../images/admin.png" id="admin-img" class="center"  alt="">
+                     </div>
+                <div class="modal-body">
+                    <form data-parsley-validate>
+                      <div class="form-group ">
+                        <label for="Email" class="col-sm-2 col-form-label text-light">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text"  class="form-control" id="adminEmail" placeholder="email@example.com">
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="inputPassword" class="col-sm-2 col-form-label text-light">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="adminPassword" placeholder="Password">
+                        </div>
+                      </div>
+                     
+                    </form>
+                    <div class="form-group row">
+                      <button type="submit" id="admin_btn_submit" class="btn btn-login-form">Login</button>
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <!-- <div class="modal-body">
+          ...
+        </div> -->
+       
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+"login":[{
+            "id":"1",
+            "username":"Ayush@gmail.com",
+            "password":"user1"
+             },
+        {
+            "id":"2",
+            "username":"kshitij@gmail.com",
+            "password":"user2"
+        },
+    {
+            "id":"3",
+            "username":"hemant@gmail.com",
+            "password":"user3"
+        },
+        {
+            "id":"4",
+            "username":"tanmay@gmail.com",
+            "password":"user4"
+        },
+        {
+            "id":"5",
+            "username":"varun@gmail.com",
+            "password":"user5"
+        }
+    ],
+"admin":[{
+            "id":"1",
+            "username":"admin@gmail.com",
+            "password":"admin"
+    },
+        {
+            "id":"2",
+            "username":"admin2@gmail.com",
+            "password":"admin2"
+        }
+    
+    ]
+}
