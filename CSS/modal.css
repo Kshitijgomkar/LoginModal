@@ -44,3 +44,18 @@ body{
       display: block;
       border: none;
   }
+  .divAlign{
+    display:inline-block;
+    vertical-align:middle;
+    margin-left: 5%;
+  }
+  .peopleCarouselImg img {
+    width: auto;
+    height: 300px;
+    max-height: 300px;
+  }
+  footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+  }

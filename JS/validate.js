@@ -10,7 +10,7 @@ $(document).ready(function(){
         var logged=false;
         if( username != "" && password != "" ){
             $.ajax({
-                url:'http://localhost:3000/login/',
+                url:'http://localhost:3000/login',
                 type:'get',
                 success:function(response){
                     for (var i=0; i < response.length; i++) {
@@ -37,7 +37,7 @@ $(document).ready(function(){
         var logged=false;
         if( usernameAdmin != "" && passwordAdmin != "" ){
             $.ajax({
-                url:'http://localhost:3000/admin/',
+                url:'http://localhost:3000/admin',
                 type:'get',
                 success:function(response){
                     for (var i=0; i < response.length; i++) {
@@ -62,7 +62,7 @@ $(document).ready(function(){
         var password;
         if(email != ''){
             $.ajax({
-                url:'http://localhost:3000/login/',
+                url:'http://localhost:3000/login',
                 type:'get',
                 success:function(response){
                     for(var i =0;i< response.length; i++){
@@ -83,22 +83,64 @@ $(document).ready(function(){
     });
 
 
-// Caraousal Categories Data --------------------------
-$.ajax({
-    url: "http://localhost:3000/categories",
-    method: "GET",
-    success:(x)=>{
-        var cards = 0;
-        x.forEach(element => {
-            if(cards < 3){
-                $('#carouselExampleControls').append("  <div class='carousel-inner'><div class='carousel-item active'>   <div class='col-md-3' style='float:left'><div class='card mb-2'><img class='card-img-top' src= '"+ element.url +"' alt='Card image cap'><div class='card-body'><h4 class='card-title'>"+  element.name +"</h4> <p class='card-text'>" + element.data+ "</p><a class='btn btn-primary'>Button</a></div></div></div></div></div>")    
-                cards = cards + 1;
-            }else{
-                $('#carouselExampleControls').append("  <div class='carousel-inner'><div class='carousel-item '>   <div class='col-md-3' style='float:left'><div class='card mb-2'><img class='card-img-top' src= '"+ element.url +"' alt='Card image cap'><div class='card-body'><h4 class='card-title'>"+  element.name +"</h4> <p class='card-text'>" + element.data+ "</p><a class='btn btn-primary'>Button</a></div></div></div></div></div>")    
-            }
-            });
-    }
-})
+// Sign Up Modal for User ---------------------------
 
-   
+function validation(e){
+    
+    if (document.getElementById('rPassword').value != document.getElementById('password_again').value) {
+      
+        document.getElementById("repeat_pwd").innerHTML = "<p style='color:red'>Password is not matching!!!</p>";
+        return false;
+}
+return true;
+}
+
+$("#signUp").click((e)=>{
+    e.preventDefault();
+    var flag = validation(e);
+  
+    if(flag){
+        console.log("posting");
+        var name=$("#Name").val();
+        var email=$("#sEmail").val().toLowerCase();
+        var password=$("#rPassword").val();
+        if( email != "" && password != "" && name != ""){    
+        $.ajax({
+            url:"http://localhost:3000/login",
+            method:"POST",
+            data:{
+                "name":name,
+                "username": email,
+                "password":password
+            },
+            success:(x)=>{
+                alert("Registration successful...");
+            },
+            error:(e1)=>{
+                alert("error"+e1);
+            }
+        
+        });
+    }
+}else{
+    alert("Form not complete");
+}
+    })  
+
+
+// Caraousal Categories Data --------------------------
+    $.ajax({
+        url: "http://localhost:3000/categories",
+        method: "GET",
+        success:(element)=>{
+            for (var i = 0; i < element.length; i++) {
+                console.log(element);
+                if(element[i].id <= 1 ){
+                    $('#mycarousal').append(" <div class='carousel-item row active'><div class='col-md-4  divAlign'><div class='card card-body peopleCarouselImg'><img class='img-fluid' src='"+element[i].url+"'><h2>"+element[i].name+"</h2> <br> <h4>"+ element[i].data+"<h4></div></div> </div> </div>")  ;
+                }else{
+                    $('#mycarousal').append(" <div class='carousel-item row '><div class='col-md-4 divAlign'><div class='card card-body peopleCarouselImg'><img class='img-fluid' src='"+element[i].url+"'><h2>"+element[i].name+"</h2> <br> <h4>"+ element[i].data+"<h4></div></div></div>")  ;
+                }
+            } 
+        }
+    });
 });
